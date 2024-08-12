@@ -1,59 +1,74 @@
-// body {
-//     font-family: Arial, sans-serif;
-//     margin: 0;
-//     padding: 0;
-//   }
+@import "./scss/mixins.scss";
+@import "./scss/variables.scss";
+
+body {
+    box-sizing: border-box;
+    padding-left: 40px;
+    padding-right: 40px;
   
-//   header {
-//     background-color: #f4f4f4;
-//     padding: 1rem;
-//     text-align: center;
-    
-//     h1 {
-//       margin: 0;
-//     }
+    .inp {
+      width: 100%;
+      max-width: 300px;
+      height: 30px;
+      font-size: large;
+      margin-bottom: 20px;
+    }
   
-//     input {
-//       margin-top: 1rem;
-//       padding: 0.5rem;
-//       font-size: 1rem;
-//       border: 1px solid #ddd;
-//       border-radius: 4px;
-//     }
-//   }
+    .btn-container {
+      @include flex-center(row, flex-start, center);
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
   
-//   main {
-//     padding: 1rem;
-//   }
+      .btn {
+        width: 100%;
+        max-width: 80px;
+        height: 30px;
+        @include button-styles($primary-color, $primary-color-hover);
+      }
+    }
   
-//   .catalog {
-//     display: flex;
-//     flex-wrap: wrap;
-//     gap: 1rem;
-//     justify-content: center;
-//   }
+    .card-container {
+      @include responsive-grid(4);
   
-//   .catalog-item {
-//     border: 1px solid #ddd;
-//     border-radius: 4px;
-//     padding: 1rem;
-//     max-width: 300px;
-//     text-align: center;
+      @media (max-width: 1024px) {
+        @include responsive-grid(3);
+      }
   
-//     h2 {
-//       margin: 0 0 0.5rem;
-//     }
+      @media (max-width: 768px) {
+        @include responsive-grid(2);
+      }
   
-//     p {
-//       margin: 0;
-//     }
+      @media (max-width: 480px) {
+        @include responsive-grid(1);
+      }
   
-//     .ram {
-//       font-weight: bold;
-//     }
+      .card {
+        @include flex-center(column, flex-start, flex-start);
+        border: 1px solid $border-color;
+        border-radius: 10px;
+        padding: 13px;
+        gap: 20px;
+        background-color: $background-color;
+        transition: transform 0.3s ease;
   
-//     .price {
-//       color: green;
-//     }
-//   }
+        img:hover {
+          overflow: hidden;
+          cursor: pointer;
+          transform: scale(1.07);
+          border-radius: 10px;
+        }
   
+        .category {
+          width: 80px;
+          height: 20px;
+          background-color: $grey;
+          border-radius: 5px;
+          margin-top: 10px;
+          padding: 5px;
+          text-align: center;
+        }
+      }
+    }
+  }

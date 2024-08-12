@@ -1,1 +1,88 @@
-/*# sourceMappingURL=style.css.map */
+body {
+  box-sizing: border-box;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+body .inp {
+  width: 100%;
+  max-width: 300px;
+  height: 30px;
+  font-size: large;
+  margin-bottom: 20px;
+}
+body .btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+body .btn-container .btn {
+  width: 100%;
+  max-width: 80px;
+  height: 30px;
+  background-color: rgb(46, 126, 46);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+body .btn-container .btn:hover {
+  background-color: rgb(0, 82, 0);
+}
+body .card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+@media (max-width: 1024px) {
+  body .card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+@media (max-width: 768px) {
+  body .card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+@media (max-width: 480px) {
+  body .card-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+}
+body .card-container .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 13px;
+  gap: 20px;
+  background-color: whitesmoke;
+  transition: transform 0.3s ease;
+}
+body .card-container .card img:hover {
+  overflow: hidden;
+  cursor: pointer;
+  transform: scale(1.07);
+  border-radius: 10px;
+}
+body .card-container .card .category {
+  width: 80px;
+  height: 20px;
+  background-color: grey;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 5px;
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */

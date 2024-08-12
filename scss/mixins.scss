@@ -1,0 +1,25 @@
+@import "./variables.scss";
+
+@mixin flex-center($direction: row, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+  }
+  
+  @mixin button-styles($bg-color, $hover-color) {
+    background-color: $bg-color;
+    color: $white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
+  
+  @mixin responsive-grid($columns) {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    gap: 20px;
+  }
